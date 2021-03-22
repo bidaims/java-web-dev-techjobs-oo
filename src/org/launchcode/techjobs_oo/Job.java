@@ -2,6 +2,7 @@ package org.launchcode.techjobs_oo;
 
 import org.junit.Before;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class Job {
@@ -36,6 +37,38 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+    @Override
+    public String toString() {
+
+        String result = "";
+        if(name.equals("") && employer.getValue().equals("") && location.getValue().equals("") && positionType.getValue().equals("") && coreCompetency.getValue().equals("")){
+            return "OOPS! This job does not seem to exist.";
+        }
+
+        if(name.equals("")){
+            name="Data not available";
+        }
+        if(employer.getValue().equals("")||employer.getValue()==null){
+            employer.setValue("Data not available");
+        }
+        if(location.getValue().equals("")||location.getValue()==null){
+            location.setValue("Data not available");
+        }
+        if(positionType.getValue().equals("")||positionType.getValue()==null){
+            positionType.setValue("Data not available");
+        }
+        if(coreCompetency.getValue().equals("")||coreCompetency.getValue()==null){
+            coreCompetency.setValue("Data not available");
+        }
+
+        result="\n"+"ID: "+this.id+"\n"+
+                "Name: "+this.name+"\n"+
+                this.employer+this.location+this.positionType+this.coreCompetency+"\n";
+//        return "\n"+"ID: "+this.id+"\n"+
+//                "Name: "+this.name+"\n"+
+//                this.employer+this.location+this.positionType+this.coreCompetency+"\n";
+        return result;
+        }
 
     @Override
     public boolean equals(Object o) {
@@ -62,8 +95,11 @@ public class Job {
     public String getName() {
         return name;
     }
-
+// i added null pointer exception to each field so it identifies if any of the fields has a null value
     public void setName(String name) {
+        if (name == null) {
+            throw new NullPointerException("Data not available");
+        }
         this.name = name;
     }
 
@@ -72,6 +108,9 @@ public class Job {
     }
 
     public void setEmployer(Employer employer) {
+        if (employer == null) {
+            throw new NullPointerException("Data not available");
+        }
         this.employer = employer;
     }
 
@@ -80,6 +119,9 @@ public class Job {
     }
 
     public void setLocation(Location location) {
+        if (location == null) {
+            throw new NullPointerException("Data not available");
+        }
         this.location = location;
     }
 
@@ -88,6 +130,9 @@ public class Job {
     }
 
     public void setPositionType(PositionType positionType) {
+        if (positionType == null) {
+            throw new NullPointerException("Data not available");
+        }
         this.positionType = positionType;
     }
 
@@ -96,6 +141,9 @@ public class Job {
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
+        if (coreCompetency == null) {
+            throw new NullPointerException("Data not available");
+        }
         this.coreCompetency = coreCompetency;
     }
 

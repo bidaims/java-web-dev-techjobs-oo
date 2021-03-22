@@ -19,7 +19,11 @@ public class PositionType {
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
     @Override
-    public String toString() { return value; }
+    public String toString() {
+//        System.out.println("Position Type: " +value+"\n");
+
+         return "Position Type: " +value +"\n";
+    }
 
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when

@@ -21,7 +21,8 @@ public class Employer {
 
     @Override
     public String toString() {
-        return value;
+//        System.out.println("Employer: " +value+"\n");
+        return "Employer: " +value +"\n";
     }
 
     @Override

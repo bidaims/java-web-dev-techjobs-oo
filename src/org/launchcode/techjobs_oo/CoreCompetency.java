@@ -2,6 +2,8 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
+import static org.junit.Assert.assertEquals;
+
 public class CoreCompetency {
     private int id;
     private static int nextId = 1;
@@ -21,7 +23,14 @@ public class CoreCompetency {
 
     @Override
     public String toString() {
-        return value;
+//        System.out.println("Core Competency: " +value+"\n");
+ //       System.out.println(this.value);
+//
+//        if (value==null) {
+//            System.out.printf( value);
+//            //this.value = "Data not available";
+//        }
+        return "Core Competency: " +value;
     }
 
     @Override

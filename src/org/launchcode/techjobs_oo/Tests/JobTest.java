@@ -4,11 +4,14 @@ import org.launchcode.techjobs_oo.*;
 import org.junit.Test;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.*;
 
 public class JobTest {
 
-    Job job1, job2, job3, job4, job5;
+    Job job1, job2, job3, job4, job5, job6, job7;
     @Before
     public void createJobObjects() {
         job1 = new Job();
@@ -16,6 +19,10 @@ public class JobTest {
         job3 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
         job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
+        job7 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+//        job7 = new Job(" ", new Employer(" "), new Location(" "), new PositionType(" "), new CoreCompetency(" "));
+
     }
 
 
@@ -60,5 +67,48 @@ public class JobTest {
 //        System.out.println(job1.getId());
     }
 
+    @Test ()
+    public void testToString (){
+
+        //String expected = "\n" + job4 + "\n";
+        //assertEquals(job4.toString(), expected);
+
+        String expected = "\n" +
+                "ID: " + job4.getId()  +"\n" +
+                "Name: " + job4.getName()  +"\n"+
+                job4.getEmployer() +
+                job4.getLocation() +
+                job4.getPositionType() +
+                job4.getCoreCompetency() +
+                "\n";
+        assertEquals(job4.toString(), expected);
+    }
+    @Test
+    public void testForEmptyFields() {
+
+        String actualExample = "\n" +
+                "ID: " + job6.getId()  +"\n" +
+                "Name: " + job6.getName()  +"\n"+
+                job6.getEmployer() +
+                job6.getLocation() +
+                job6.getPositionType() +
+                "Core Competency: Data not available" +
+                "\n";
+
+            assertEquals(job6.toString(), actualExample);
+    }
+
+    @Test
+    public void testForOnlyIdField(){
+//        System.out.println(job1);
+        String actualExample = "";
+        if(actualExample == "\n" + "ID: " + job7.getId()  +"\n"){
+            System.out.println("OOPS! This job does not seem to exist.");
+
+        };
+        assertEquals(job7.toString(), "OOPS! This job does not seem to exist.");
+
+
+    }
 }
 

@@ -24,7 +24,8 @@ public class Location {
 
     @Override
     public String toString() {
-        return value;
+//        System.out.println("Location: " +value+"\n");
+        return "Location: " +value +"\n";
     }
 
     @Override
