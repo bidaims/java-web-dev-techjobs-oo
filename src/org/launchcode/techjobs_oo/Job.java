@@ -40,7 +40,7 @@ public class Job {
     @Override
     public String toString() {
 
-        String result = "";
+        String outcome = "";
         if(name.equals("") && employer.getValue().equals("") && location.getValue().equals("") && positionType.getValue().equals("") && coreCompetency.getValue().equals("")){
             return "OOPS! This job does not seem to exist.";
         }
@@ -61,13 +61,24 @@ public class Job {
             coreCompetency.setValue("Data not available");
         }
 
-        result="\n"+"ID: "+this.id+"\n"+
-                "Name: "+this.name+"\n"+
-                this.employer+this.location+this.positionType+this.coreCompetency+"\n";
-//        return "\n"+"ID: "+this.id+"\n"+
-//                "Name: "+this.name+"\n"+
-//                this.employer+this.location+this.positionType+this.coreCompetency+"\n";
-        return result;
+        outcome="\nID: " + id +
+                "\nName: " + name +
+                "\nEmployer: " + employer +
+                "\nLocation: " + location +
+                "\nPosition Type: " + positionType +
+                "\nCore Competency: " + coreCompetency +
+                "\n";
+
+//       alternate formatting idea for me. note that %d is for integer and %s is for string
+//       outcome= String.format("\nID: %d\n" +
+//                "Name: %s\n" +
+//                "Employer: %s\n" +
+//                "Location: %s\n" +
+//                "Position Type: %s\n" +
+//                "Core Competency: %s\n", id, name, employer, location, positionType, coreCompetency);
+
+
+        return outcome;
         }
 
     @Override

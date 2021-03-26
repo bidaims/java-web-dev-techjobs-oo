@@ -73,26 +73,24 @@ public class JobTest {
         //String expected = "\n" + job4 + "\n";
         //assertEquals(job4.toString(), expected);
 
-        String expected = "\n" +
-                "ID: " + job4.getId()  +"\n" +
-                "Name: " + job4.getName()  +"\n"+
-                job4.getEmployer() +
-                job4.getLocation() +
-                job4.getPositionType() +
-                job4.getCoreCompetency() +
+        String expected = "\nID: " + job4.getId()  +
+                "\nName: " + job4.getName()  +
+                "\nEmployer: " + job4.getEmployer() +
+                "\nLocation: " + job4.getLocation() +
+                "\nPosition Type: " + job4.getPositionType() +
+                "\nCore Competency: " + job4.getCoreCompetency() +
                 "\n";
         assertEquals(job4.toString(), expected);
     }
     @Test
     public void testForEmptyFields() {
 
-        String actualExample = "\n" +
-                "ID: " + job6.getId()  +"\n" +
-                "Name: " + job6.getName()  +"\n"+
-                job6.getEmployer() +
-                job6.getLocation() +
-                job6.getPositionType() +
-                "Core Competency: Data not available" +
+        String actualExample = "\nID: " + job6.getId()  +
+                "\nName: " + job6.getName()  +
+                "\nEmployer: " + job6.getEmployer() +
+                "\nLocation: " + job6.getLocation() +
+                "\nPosition Type: " + job6.getPositionType() +
+                "\nCore Competency: Data not available" +
                 "\n";
 
             assertEquals(job6.toString(), actualExample);
