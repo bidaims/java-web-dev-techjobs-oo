@@ -21,58 +21,32 @@ public class JobTest {
         job5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         job6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency(""));
         job7 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
-//        job7 = new Job(" ", new Employer(" "), new Location(" "), new PositionType(" "), new CoreCompetency(" "));
-
     }
-
 
     @Test()
     public void testSettingJobId() {
-
+        assertFalse(job2.getId() - job1.getId() != 1);
         //assertEquals(job1.getId(),"");
         //assertEquals("The two IDs are NOT equal",job1.getId(),job2.getId());
         //assertTrue(job2.getId()-job1.getId()==1);
         //assertTrue(job1.getId() == job2.getId()-1);
-        assertFalse(job2.getId() - job1.getId() != 1);
         //assertFalse("The statement is NOT false",job1.getId()-job2.getId()==-1);
     }
-
-//    @Test()
-//        public void testCorrectAssignmentOfJobId(){
-//        System.out.println(job1.getId());
-//        System.out.println(job1.getId());
-//        assertEquals(job1.getId(),1);
-//        assertEquals(job2.getId(),2);
-//    }
 
     @Test()
     public void testJobConstructorSetsAllFields(){
         assertTrue(job3 != null);
     }
-    //assertTrue(job3 instanceof Job);
-    //}
 
     @Test()
     public void testJobsForEquality(){
         //assertThat(Objects.equals(job4, job5)).isTrue();
         //assertFalse(job4==job5);
         assertNotSame(job4, job5);
-
-
-//        System.out.println(job1.getId());
-//        System.out.println(job2.getId());
-//        System.out.println(job3.getId());
-//        System.out.println(job4.getId());
-//        System.out.println(job5.getId());
-//        System.out.println(job1.getId());
     }
 
     @Test ()
     public void testToString (){
-
-        //String expected = "\n" + job4 + "\n";
-        //assertEquals(job4.toString(), expected);
-
         String expected = "\nID: " + job4.getId()  +
                 "\nName: " + job4.getName()  +
                 "\nEmployer: " + job4.getEmployer() +
@@ -82,9 +56,9 @@ public class JobTest {
                 "\n";
         assertEquals(job4.toString(), expected);
     }
+
     @Test
     public void testForEmptyFields() {
-
         String actualExample = "\nID: " + job6.getId()  +
                 "\nName: " + job6.getName()  +
                 "\nEmployer: " + job6.getEmployer() +
@@ -105,8 +79,6 @@ public class JobTest {
 
         };
         assertEquals(job7.toString(), "OOPS! This job does not seem to exist.");
-
-
     }
 }
 

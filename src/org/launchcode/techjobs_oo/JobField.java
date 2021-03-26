@@ -32,7 +32,7 @@ public abstract class JobField {
     @Override
     public String toString() {
 
-        return value; //change this to Job field variable???
+        return value;
     }
 
     @Override
